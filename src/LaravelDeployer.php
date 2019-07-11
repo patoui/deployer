@@ -86,7 +86,7 @@ class LaravelDeployer extends Deployer
         $commands = [
             "cd {$this->project_directory}",
             'git pull origin master',
-            'composer install --no-dev'
+            'composer install --no-dev',
         ];
 
         if ($this->should_compile_assets) {
@@ -104,7 +104,7 @@ class LaravelDeployer extends Deployer
     private function checkPhpVersion(string $version) : void
     {
         if (!in_array($version, ['7.0', '7.1', '7.2', '7.3', '7.4'])) {
-            throw new Exception("Invalid php version, must be one of: 7.0, 7.1, 7.2, 7.3, 7.4");
+            throw new Exception('Invalid php version, must be one of: 7.0, 7.1, 7.2, 7.3, 7.4');
         }
 
         echo 'PHP version is valid'.PHP_EOL;
