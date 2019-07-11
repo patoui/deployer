@@ -1,0 +1,4 @@
+.idea
+vendor
+deploy.php
+composer.lock
