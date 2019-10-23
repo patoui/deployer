@@ -86,7 +86,9 @@ class LaravelDeployer extends Deployer
         $commands = [
             "cd {$this->project_directory}",
             'git pull origin master',
-            'composer install --no-dev'
+            'composer install --no-dev',
+            'sudo php artisan migrate --force',
+            'sudo php artisan db:seed --force',
         ];
 
         if ($this->should_compile_assets) {
