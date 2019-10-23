@@ -44,7 +44,7 @@ class EasySSH implements CommandInterface
     public function runCommand(string $command, $verbose = true) : string
     {
         if ($verbose) {
-            echo PHP_EOL . "Running command: $command" . PHP_EOL;
+            echo PHP_EOL."Running command: $command".PHP_EOL;
         }
 
         $stream = ssh2_exec($this->connection, $command);
@@ -55,7 +55,7 @@ class EasySSH implements CommandInterface
         fclose($stream);
 
         if ($verbose) {
-            echo "OUTPUT:" . PHP_EOL . $output . PHP_EOL;
+            echo 'OUTPUT:'.PHP_EOL.$output.PHP_EOL;
         }
 
         return $output;
